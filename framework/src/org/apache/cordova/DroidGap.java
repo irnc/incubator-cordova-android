@@ -1168,20 +1168,7 @@ public class DroidGap extends Activity implements CordovaInterface {
              // Load URL on UI thread
              me.runOnUiThread(new Runnable() {
                  public void run() {
-                     me.showWebPage(errorUrl, false, true, null); 
-                 }
-             });
-         }
-         // If not, then display error dialog
-         else {
-             final boolean exit = !(errorCode == WebViewClient.ERROR_HOST_LOOKUP);
-             me.runOnUiThread(new Runnable() {
-                 public void run() {
-                     if(exit)
-                     {
-                       me.appView.setVisibility(View.GONE);
-                       me.displayError("Application Error", description + " ("+failingUrl+")", "OK", exit);
-                     }
+                     me.showWebPage(errorUrl, false, true, null);
                  }
              });
          }
